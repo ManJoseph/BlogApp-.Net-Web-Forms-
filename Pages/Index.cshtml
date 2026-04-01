@@ -6,11 +6,11 @@
     var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
-<div class="hero-section animate-fade-in">
+<div class="hero-section animate-fade-in shadow-sm">
     <div class="container">
         <h1 class="hero-title">Discover Stories & Ideas</h1>
-        <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px;">
-            A place for creative minds to share their thoughts, learn from others, and grow together in a community of passionate writers.
+        <p class="lead mb-5 mx-auto fw-500" style="max-width: 600px; color: #4e342e;">
+            A space for creative minds to share their thoughts, learn from others, and grow together in a warm community of passionate writers.
         </p>
         @if (!User.Identity.IsAuthenticated)
         {
