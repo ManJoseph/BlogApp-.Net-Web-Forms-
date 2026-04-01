@@ -88,7 +88,7 @@ main {
     position: relative;
     padding: 10rem 0;
     text-align: center;
-    background-image: linear-gradient(rgba(255, 253, 250, 0.7), rgba(255, 253, 250, 0.7)), url('https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=2000&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(255, 253, 250, 0.7), rgba(255, 253, 250, 0.7)), url('/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
