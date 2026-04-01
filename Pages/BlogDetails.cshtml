@@ -1,0 +1,72 @@
+@page "{id:int}"
+@model BlogApp.Pages.BlogDetailsModel
+@{
+    ViewData["Title"] = Model.Blog.title;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-9">
+        <nav aria-label="breadcrumb" class="mb-4 animate-fade-in">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-page="/Index" class="text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@Model.Blog.category</li>
+            </ol>
+        </nav>
+
+        <article class="premium-card p-5 animate-fade-in shadow-lg">
+            <header class="text-center mb-5">
+                <div class="mb-3">
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-4 py-2 uppercase tracking-wider">
+                        @Model.Blog.category
+                    </span>
+                </div>
+                <h1 class="hero-title display-3 mb-4" style="line-height: 1.2;">@Model.Blog.title</h1>
+                
+                <div class="d-flex align-items-center justify-content-center gap-3 text-muted">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary-subtle rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                            <span class="text-primary fw-bold">@Model.Blog.blogger?[0]</span>
+                        </div>
+                        <span class="fw-600">@Model.Blog.blogger</span>
+                    </div>
+                    <span class="opacity-50">•</span>
+                    <span>@Model.Blog.CreatedAt.ToString("MMMM dd, yyyy")</span>
+                </div>
+            </header>
+
+            <hr class="my-5 opacity-10">
+
+            <div class="blog-content" style="font-size: 1.25rem; line-height: 1.8; color: #334155;">
+                @foreach (var line in Model.Blog.blogPost.Split('\n'))
+                {
+                    if (!string.IsNullOrWhiteSpace(line))
+                    {
+                        <p class="mb-4">@line</p>
+                    }
+                }
+            </div>
+
+            <footer class="mt-5 pt-5 border-top border-light">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-muted small">
+                        Share this story: 
+                        <a href="#" class="ms-2 text-decoration-none">Twitter</a>
+                        <a href="#" class="ms-2 text-decoration-none">LinkedIn</a>
+                    </div>
+                    <a asp-page="/Index" class="btn btn-premium px-4">Back to Feed</a>
+                </div>
+            </footer>
+        </article>
+    </div>
+</div>
+
+<style>
+    .blog-content p:first-letter {
+        font-size: 3rem;
+        font-weight: 800;
+        float: left;
+        line-height: 1;
+        margin-right: 0.5rem;
+        color: var(--primary);
+    }
+</style>

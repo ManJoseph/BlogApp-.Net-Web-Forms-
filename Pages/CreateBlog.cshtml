@@ -1,0 +1,45 @@
+@page
+@model BlogApp.Pages.CreateBlogModel
+@{
+    ViewData["Title"] = "Create a New Story";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="premium-card p-5 animate-fade-in text-center mb-5">
+            <h1 class="hero-title mb-3" style="font-size: 2.5rem;">Share Your Story</h1>
+            <p class="text-muted">What's on your mind today? Let the world know.</p>
+        </div>
+
+        <div class="premium-card p-5 animate-fade-in">
+            <form method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" name="title" class="form-control" id="titleInput" placeholder="Enter a catchy title" required />
+                    <label for="titleInput">Title</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="categorySelect" name="category" required>
+                        <option value="">Choose a category...</option>
+                        <option value="1">Technology</option>
+                        <option value="2">Lifestyle</option>
+                        <option value="3">Education</option>
+                        <option value="4">Travel</option>
+                        <option value="5">Food</option>
+                    </select>
+                    <label for="categorySelect">Category</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <textarea class="form-control" name="content" placeholder="Write your content here..." id="contentArea" style="height: 250px" required></textarea>
+                    <label for="contentArea">Content</label>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <a asp-page="/Index" class="text-secondary text-decoration-none fw-600">Cancel</a>
+                    <button type="submit" class="btn btn-premium px-5 py-3">Publish Story</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

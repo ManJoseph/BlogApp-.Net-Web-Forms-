@@ -1,0 +1,9 @@
+[Bb]in/
+[Oo]bj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.dotSettings
+.DS_Store
+appsettings.Development.json

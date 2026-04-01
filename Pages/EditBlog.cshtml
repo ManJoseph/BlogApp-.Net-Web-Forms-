@@ -1,0 +1,48 @@
+@page "{id:int}"
+@model BlogApp.Pages.EditBlogModel
+@{
+    ViewData["Title"] = "Edit Story";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="premium-card p-5 animate-fade-in text-center mb-5">
+            <h1 class="hero-title mb-3" style="font-size: 2.5rem;">Refine Your Story</h1>
+            <p class="text-muted">Polishing your work is part of the creative process.</p>
+        </div>
+
+        <div class="premium-card p-5 animate-fade-in">
+            <form method="post">
+                <input type="hidden" asp-for="Blog.blogId" />
+                
+                <div class="form-floating mb-3">
+                    <input asp-for="Blog.title" class="form-control" id="titleInput" placeholder="Enter a catchy title" required />
+                    <label for="titleInput">Title</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select asp-for="Blog.category" class="form-select" id="categorySelect" required>
+                        <option value="">Choose a category...</option>
+                        <option value="1">Technology</option>
+                        <option value="2">Lifestyle</option>
+                        <option value="3">Education</option>
+                        <option value="4">Travel</option>
+                        <option value="5">Food</option>
+                    </select>
+                    <label for="categorySelect">Category</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <textarea asp-for="Blog.blogPost" class="form-control" placeholder="Write your content here..." id="contentArea" style="height: 250px" required></textarea>
+                    <label for="contentArea">Content</label>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <a asp-page="/Index" class="text-secondary text-decoration-none fw-600">Cancel</a>
+                    <button type="submit" class="btn btn-premium px-5 py-3">Update Story</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

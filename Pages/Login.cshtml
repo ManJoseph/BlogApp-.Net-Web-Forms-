@@ -1,0 +1,48 @@
+@page
+@model BlogApp.Pages.LoginModel
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="col-md-5">
+        <div class="premium-card p-5 animate-fade-in">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Welcome Back</h2>
+                <p class="text-muted">Enter your credentials to access your account</p>
+            </div>
+
+            @if (Request.Query["registered"] == "true")
+            {
+                <div class="alert alert-success border-0 rounded-4 mb-4" role="alert">
+                    Registration successful! Please log in.
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <div class="alert alert-danger border-0 rounded-4 mb-4" role="alert">
+                    @Model.ErrorMessage
+                </div>
+            }
+
+            <form method="post">
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" type="email" class="form-control" placeholder="name@example.com" required />
+                    <label asp-for="Input.Email">Email Address</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input asp-for="Input.Password" type="password" class="form-control" placeholder="Password" required />
+                    <label asp-for="Input.Password">Password</label>
+                </div>
+                
+                <button type="submit" class="btn btn-premium w-100 py-3 mb-3">Sign In</button>
+                
+                <div class="text-center mt-3">
+                    <span class="text-muted">Don't have an account?</span>
+                    <a asp-page="/Register" class="text-primary fw-600 text-decoration-none ms-1">Register Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
