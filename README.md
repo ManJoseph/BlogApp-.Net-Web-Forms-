@@ -1,4 +1,5 @@
 # BlogApp - My .NET Journey at AUCA
+<img width="941" height="441" alt="image" src="https://github.com/user-attachments/assets/d0e1e8e5-56b7-45c0-8558-881893f7b5ec" />
 
 Welcome to my BlogApp! This project is the culmination of what I've been learning in the **.NET Class at AUCA (American University of Central Asia)**. It's a fully functional blogging platform built to demonstrate my understanding of web development, database management, and security in the .NET ecosystem.
 
